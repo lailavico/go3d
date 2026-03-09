@@ -179,5 +179,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  console.log('✅ Página optimizada para Pixel 7a y móviles - Laila Vico 3D');
+  console.log('✅ Página optimizada para móviles - Laila Vico 3D');
 });
