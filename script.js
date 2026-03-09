@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let errores = [];
       
-      if (!nombre) errores.push('• Nombre completo');
+      if (!nombre) errores.push('• Nombre');
       if (!email) {
         errores.push('• Email');
       } else if (!email.includes('@') || !email.includes('.')) {
