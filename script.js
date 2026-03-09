@@ -1,6 +1,10 @@
-// script.js
+// script.js - Multiidioma
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Detectar idioma actual para el selector activo
+  const currentPath = window.location.pathname;
+  const isEnglish = currentPath.includes('/en/');
+  
   // --- Menú responsive mejorado ---
   const menuToggle = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.menu');
@@ -125,25 +129,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
       let errores = [];
       
-      if (!nombre) errores.push('• Nombre completo');
+      if (!nombre) errores.push(isEnglish ? '• Full name' : '• Nombre completo');
       if (!email) {
-        errores.push('• Email');
+        errores.push(isEnglish ? '• Email' : '• Email');
       } else if (!email.includes('@') || !email.includes('.')) {
-        alert('Por favor, introduce un email válido');
+        alert(isEnglish ? 'Please enter a valid email' : 'Por favor, introduce un email válido');
         return;
       }
       
-      if (!tipo) errores.push('• Tipo de servicio');
-      if (!mensaje) errores.push('• Descripción del proyecto');
-      if (!privacidad) errores.push('• Aceptar política de privacidad');
+      if (!tipo) errores.push(isEnglish ? '• Service type' : '• Tipo de servicio');
+      if (!mensaje) errores.push(isEnglish ? '• Project description' : '• Descripción del proyecto');
+      if (!privacidad) errores.push(isEnglish ? '• Accept privacy policy' : '• Aceptar política de privacidad');
 
       if (errores.length > 0) {
-        alert('Por favor, completa:\n' + errores.join('\n'));
+        alert((isEnglish ? 'Please complete:\n' : 'Por favor, completa:\n') + errores.join('\n'));
         return;
       }
 
       // Éxito
-      alert('✓ ¡Solicitud enviada! Laila te contactará en menos de 24h.');
+      alert(isEnglish ? 
+        '✓ Request sent! Laila will contact you within 24h.' : 
+        '✓ ¡Solicitud enviada! Laila te contactará en menos de 24h.');
       form.reset();
     });
   }
@@ -179,5 +185,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  console.log('✅ Página optimizada para Pixel 7a y móviles - Laila Vico 3D');
+  console.log('✅ Página multiidioma - Laila Vico 3D');
 });
