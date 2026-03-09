@@ -17,9 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.style.position = 'absolute';
         menu.style.top = navbar ? navbar.offsetHeight + 'px' : '70px';
         menu.style.left = '0';
+        menu.style.right = '0';
         menu.style.width = '100%';
         menu.style.background = 'white';
-        menu.style.padding = '1rem 0';
+        menu.style.padding = '0.5rem 0';
         menu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
         menu.style.zIndex = '99';
         
@@ -29,19 +30,28 @@ document.addEventListener('DOMContentLoaded', function() {
           ul.style.flexDirection = 'column';
           ul.style.gap = '0';
           ul.style.width = '100%';
+          ul.style.padding = '0';
           
           const items = ul.querySelectorAll('li');
           items.forEach(item => {
             item.style.width = '100%';
             item.style.textAlign = 'center';
+            item.style.margin = '0';
             
             const link = item.querySelector('a');
             if (link) {
               link.style.display = 'block';
-              link.style.padding = '12px 20px';
-              link.style.width = '100%;
+              link.style.padding = '14px 20px';
+              link.style.width = '100%';
+              link.style.borderBottom = '1px solid #f0f0f0';
             }
           });
+          
+          // El último item sin borde
+          const lastLink = ul.querySelector('li:last-child a');
+          if (lastLink) {
+            lastLink.style.borderBottom = 'none';
+          }
         }
       }
     });
@@ -73,11 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.style.padding = '0';
         menu.style.boxShadow = 'none';
         menu.style.background = 'transparent';
+        menu.style.right = 'auto';
         
         const ul = menu.querySelector('ul');
         if (ul) {
           ul.style.flexDirection = 'row';
-          ul.style.gap = '1.5rem';
+          ul.style.gap = '1.2rem';
+          ul.style.padding = '0';
           
           const items = ul.querySelectorAll('li');
           items.forEach(item => {
@@ -89,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
               link.style.display = 'inline';
               link.style.padding = '0';
               link.style.width = 'auto';
+              link.style.borderBottom = 'none';
             }
           });
         }
@@ -113,8 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let errores = [];
       
       if (!nombre) errores.push('• Nombre completo');
-      if (!email) errores.push('• Email');
-      else if (!email.includes('@') || !email.includes('.')) {
+      if (!email) {
+        errores.push('• Email');
+      } else if (!email.includes('@') || !email.includes('.')) {
         alert('Por favor, introduce un email válido');
         return;
       }
@@ -145,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         
         // Ajuste para header fijo
-        const headerOffset = 80;
+        const headerOffset = 70;
         const elementPosition = target.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -162,12 +176,8 @@ document.addEventListener('DOMContentLoaded', function() {
   images.forEach(img => {
     img.addEventListener('error', function() {
       this.style.display = 'none';
-      // Opcional: mostrar un mensaje o placeholder alternativo
-      if (this.parentElement) {
-        // Podríamos añadir un fondo de color
-      }
     });
   });
 
-  console.log('✅ Página optimizada para móvil - Laila Vico 3D');
+  console.log('✅ Página optimizada para Pixel 7a y móviles - Laila Vico 3D');
 });

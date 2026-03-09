@@ -34,7 +34,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
   width: 100%;
   overflow-x: hidden;
 }
@@ -66,7 +66,7 @@ img {
 
 .logo a {
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--color-oscuro);
   text-decoration: none;
   letter-spacing: -0.5px;
@@ -75,13 +75,13 @@ img {
 
 .logo span {
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #6b7280;
 }
 
 .menu ul {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
   list-style: none;
   align-items: center;
 }
@@ -91,7 +91,7 @@ img {
   color: var(--color-texto);
   font-weight: 500;
   transition: color 0.2s;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .menu a:hover {
@@ -116,11 +116,12 @@ img {
   display: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: var(--color-oscuro);
 }
 
 /* Hero */
 .hero {
-  padding: 60px 0;
+  padding: 50px 0;
   background: linear-gradient(145deg, #ffffff 0%, #f9fafc 100%);
   width: 100%;
 }
@@ -133,16 +134,17 @@ img {
 }
 
 .hero-text h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-oscuro);
   margin-bottom: 1rem;
   word-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-text p {
-  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-size: clamp(0.95rem, 3vw, 1.2rem);
   color: #4b5563;
   margin-bottom: 1.5rem;
 }
@@ -175,13 +177,19 @@ img {
 .hero-badge {
   margin-top: 1.5rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
   flex-wrap: wrap;
+}
+
+.hero-badge span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
 }
 
 .hero-badge span i {
   color: var(--color-dorado);
-  margin-right: 6px;
 }
 
 .hero-image img {
@@ -194,7 +202,7 @@ img {
 .section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 2.5rem auto;
+  margin: 0 auto 2.2rem auto;
   padding: 0 10px;
 }
 
@@ -203,33 +211,38 @@ img {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 .section-header h2 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
   font-weight: 700;
   color: var(--color-oscuro);
-  margin: 0.8rem 0;
+  margin: 0.6rem 0;
   word-wrap: break-word;
+}
+
+.section-header p {
+  font-size: 0.95rem;
+  color: #4b5563;
 }
 
 /* Servicios */
 .servicios {
-  padding: 60px 0;
+  padding: 50px 0;
   background: white;
 }
 
 .servicios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
 }
 
 .servicio-card {
   background: var(--color-gris-claro);
-  padding: 2rem 1.2rem;
-  border-radius: 24px;
+  padding: 1.8rem 1rem;
+  border-radius: 20px;
   transition: 0.2s;
   text-align: center;
 }
@@ -240,32 +253,37 @@ img {
 }
 
 .servicio-card i {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--color-dorado);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .servicio-card h3 {
-  margin-bottom: 0.8rem;
-  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
   color: var(--color-oscuro);
+}
+
+.servicio-card p {
+  font-size: 0.9rem;
+  color: #4b5563;
 }
 
 /* Proyectos */
 .proyectos {
-  padding: 60px 0;
+  padding: 50px 0;
   background: #f8fafc;
 }
 
 .proyectos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
 }
 
 .proyecto-item {
   position: relative;
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
   aspect-ratio: 4/3;
   cursor: pointer;
@@ -289,34 +307,35 @@ img {
   right: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   color: white;
-  padding: 1.2rem 1rem 0.8rem;
+  padding: 1rem 0.8rem 0.6rem;
 }
 
 .proyecto-info h3 {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .proyecto-info p {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   opacity: 0.9;
 }
 
 .proyectos-cta {
   text-align: center;
-  margin-top: 2.5rem;
+  margin-top: 2.2rem;
 }
 
 .btn-secondary {
   background: transparent;
   border: 2px solid var(--color-oscuro);
   color: var(--color-oscuro);
-  padding: 10px 24px;
+  padding: 10px 22px;
   border-radius: 40px;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
   transition: 0.2s;
+  font-size: 0.95rem;
 }
 
 .btn-secondary:hover {
@@ -326,100 +345,107 @@ img {
 
 /* Sobre mí */
 .sobre-mi {
-  padding: 60px 0;
+  padding: 50px 0;
   background: white;
 }
 
 .sobre-mi-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  gap: 2rem;
   align-items: center;
 }
 
 .sobre-mi-imagen img {
   width: 100%;
-  border-radius: 28px;
-  box-shadow: 0 20px 35px -12px #1e293b;
+  border-radius: 24px;
+  box-shadow: 0 20px 30px -12px #1e293b;
 }
 
 .sobre-mi-texto h2 {
-  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
   color: var(--color-oscuro);
-  margin: 0.5rem 0 1rem;
+  margin: 0.4rem 0 1rem;
   word-wrap: break-word;
 }
 
 .sobre-mi-texto p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
+  margin-bottom: 0.9rem;
+  font-size: 0.95rem;
   word-wrap: break-word;
+}
+
+.sobre-mi-texto p strong {
+  word-break: break-word;
+  color: var(--color-oscuro);
 }
 
 .sobre-mi-stats {
   display: flex;
-  gap: 1.5rem;
-  margin: 1.5rem 0;
+  gap: 1.2rem;
+  margin: 1.2rem 0;
   flex-wrap: wrap;
 }
 
 .sobre-mi-stats div {
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .sobre-mi-stats span {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--color-dorado);
   display: block;
 }
 
 /* Contacto */
 .contacto {
-  padding: 60px 0;
+  padding: 50px 0;
   background: var(--color-gris-claro);
 }
 
 .contacto-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 2rem;
+  gap: 1.8rem;
   background: white;
-  border-radius: 28px;
-  padding: 2rem;
+  border-radius: 24px;
+  padding: 1.8rem;
   box-shadow: 0 15px 30px -12px rgba(0,0,0,0.1);
 }
 
 .contacto-datos h3 {
   color: var(--color-oscuro);
-  margin-bottom: 1.2rem;
-  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
 .contacto-datos ul {
   list-style: none;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .contacto-datos li {
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   word-wrap: break-word;
+  font-size: 0.9rem;
 }
 
 .contacto-datos i {
   color: var(--color-dorado);
-  width: 20px;
+  width: 18px;
   flex-shrink: 0;
 }
 
 .redes {
   display: flex;
   gap: 1rem;
-  font-size: 1.3rem;
-  margin: 1.5rem 0;
+  font-size: 1.2rem;
+  margin: 1.2rem 0;
 }
 
 .redes a {
@@ -434,28 +460,28 @@ img {
 .contacto-form .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
 .form-group label {
   display: block;
   font-weight: 500;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   color: #1f2937;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .form-group input, .form-group select, .form-group textarea {
   width: 100%;
-  padding: 10px 14px;
+  padding: 10px 12px;
   border: 1px solid #d1d5db;
-  border-radius: 12px;
+  border-radius: 10px;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .form-group.checkbox {
@@ -469,17 +495,23 @@ img {
   width: auto;
 }
 
+.form-group.checkbox label {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
 .btn-block {
   width: 100%;
   text-align: center;
   margin-top: 0.5rem;
-  padding: 12px 20px !important;
+  padding: 12px 16px !important;
   white-space: normal;
+  font-size: 0.95rem;
 }
 
 .form-note {
   margin-top: 0.8rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #6b7280;
   text-align: center;
 }
@@ -488,13 +520,13 @@ img {
 footer {
   background: var(--color-oscuro);
   color: #9ca3af;
-  padding: 1.8rem 0;
+  padding: 1.5rem 0;
   text-align: center;
 }
 
 .footer p {
-  margin: 0.3rem 0;
-  font-size: 0.9rem;
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
   word-wrap: break-word;
 }
 
@@ -502,11 +534,11 @@ footer {
 @media (max-width: 900px) {
   .hero-grid, .sobre-mi-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.8rem;
   }
   
   .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   
   .menu {
@@ -524,11 +556,11 @@ footer {
   
   .navbar {
     height: auto;
-    min-height: 70px;
+    min-height: 65px;
   }
   
   .logo a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   .logo span {
@@ -538,20 +570,24 @@ footer {
 
 @media (max-width: 600px) {
   .container {
-    padding: 0 16px;
+    padding: 0 14px;
   }
   
   .hero {
-    padding: 40px 0;
+    padding: 35px 0;
   }
   
   .hero-text h1 {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
   }
   
   .hero-badge {
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.6rem;
+  }
+  
+  .hero-badge span {
+    font-size: 0.9rem;
   }
   
   .servicios-grid, .proyectos-grid {
@@ -563,12 +599,16 @@ footer {
   }
   
   .sobre-mi-stats {
-    gap: 1rem;
+    gap: 0.8rem;
     justify-content: space-between;
   }
   
+  .sobre-mi-stats div {
+    font-size: 0.85rem;
+  }
+  
   .sobre-mi-stats span {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   
   .form-row {
@@ -576,18 +616,23 @@ footer {
   }
   
   .section-header h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+  
+  .section-header p {
+    font-size: 0.9rem;
   }
   
   .contacto-grid {
-    padding: 1.2rem;
+    padding: 1rem;
   }
   
   .btn-primary, .btn-secondary {
     white-space: normal;
     width: 100%;
     text-align: center;
-    padding: 12px 20px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
   }
   
   .hero-badge span {
@@ -595,39 +640,49 @@ footer {
     align-items: center;
   }
   
-  /* Fix para el texto "Laila Vico 22a" */
-  .sobre-mi-texto p strong {
-    word-break: break-word;
+  .contacto-datos li {
+    font-size: 0.85rem;
   }
   
-  .contacto-datos li {
+  /* Fix específico para Pixel 7a y similares */
+  .sobre-mi-texto p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .sobre-mi-texto p strong {
+    display: inline;
     font-size: 0.9rem;
   }
 }
 
 @media (max-width: 380px) {
   .hero-text h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   
   .logo a {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
   
   .sobre-mi-stats {
     flex-direction: column;
-    gap: 0.8rem;
+    gap: 0.6rem;
   }
   
   .sobre-mi-stats div {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
   }
   
   .sobre-mi-stats span {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     display: inline-block;
-    margin-right: 5px;
+    margin-right: 4px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.4rem;
   }
 }
