@@ -17,6 +17,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -24,12 +26,23 @@ body {
   color: var(--color-texto);
   line-height: 1.5;
   background-color: #ffffff;
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Header */
@@ -40,32 +53,35 @@ body {
   top: 0;
   z-index: 100;
   border-bottom: 1px solid #eef2f6;
+  width: 100%;
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 70px;
+  width: 100%;
 }
 
 .logo a {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--color-oscuro);
   text-decoration: none;
   letter-spacing: -0.5px;
+  white-space: nowrap;
 }
 
 .logo span {
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #6b7280;
 }
 
 .menu ul {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   list-style: none;
   align-items: center;
 }
@@ -75,6 +91,7 @@ body {
   color: var(--color-texto);
   font-weight: 500;
   transition: color 0.2s;
+  font-size: 0.95rem;
 }
 
 .menu a:hover {
@@ -84,9 +101,10 @@ body {
 .btn-contacto {
   background: var(--color-oscuro);
   color: white !important;
-  padding: 10px 20px;
+  padding: 8px 16px;
   border-radius: 40px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .btn-contacto:hover {
@@ -102,36 +120,38 @@ body {
 
 /* Hero */
 .hero {
-  padding: 80px 0;
+  padding: 60px 0;
   background: linear-gradient(145deg, #ffffff 0%, #f9fafc 100%);
+  width: 100%;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .hero-text h1 {
-  font-size: 3.2rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-oscuro);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
 }
 
 .hero-text p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
   color: #4b5563;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .btn-primary {
   display: inline-block;
   background: var(--color-dorado);
   color: var(--color-oscuro);
-  padding: 14px 32px;
+  padding: 12px 24px;
   border-radius: 40px;
   font-weight: 600;
   text-decoration: none;
@@ -139,6 +159,7 @@ body {
   cursor: pointer;
   transition: 0.2s;
   font-size: 1rem;
+  white-space: nowrap;
 }
 
 .btn-primary i {
@@ -152,14 +173,15 @@ body {
 }
 
 .hero-badge {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .hero-badge span i {
   color: var(--color-dorado);
-  margin-right: 8px;
+  margin-right: 6px;
 }
 
 .hero-image img {
@@ -172,7 +194,8 @@ body {
 .section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 2.5rem auto;
+  padding: 0 10px;
 }
 
 .section-subtitle {
@@ -180,31 +203,32 @@ body {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 700;
   color: var(--color-oscuro);
-  margin: 1rem 0;
+  margin: 0.8rem 0;
+  word-wrap: break-word;
 }
 
 /* Servicios */
 .servicios {
-  padding: 80px 0;
+  padding: 60px 0;
   background: white;
 }
 
 .servicios-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .servicio-card {
   background: var(--color-gris-claro);
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.2rem;
   border-radius: 24px;
   transition: 0.2s;
   text-align: center;
@@ -216,32 +240,32 @@ body {
 }
 
 .servicio-card i {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: var(--color-dorado);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
 .servicio-card h3 {
   margin-bottom: 0.8rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--color-oscuro);
 }
 
 /* Proyectos */
 .proyectos {
-  padding: 80px 0;
+  padding: 60px 0;
   background: #f8fafc;
 }
 
 .proyectos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 .proyecto-item {
   position: relative;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
   aspect-ratio: 4/3;
   cursor: pointer;
@@ -265,29 +289,29 @@ body {
   right: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
   color: white;
-  padding: 1.5rem 1rem 1rem;
+  padding: 1.2rem 1rem 0.8rem;
 }
 
 .proyecto-info h3 {
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .proyecto-info p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   opacity: 0.9;
 }
 
 .proyectos-cta {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 
 .btn-secondary {
   background: transparent;
   border: 2px solid var(--color-oscuro);
   color: var(--color-oscuro);
-  padding: 12px 30px;
+  padding: 10px 24px;
   border-radius: 40px;
   font-weight: 600;
   text-decoration: none;
@@ -302,38 +326,41 @@ body {
 
 /* Sobre mí */
 .sobre-mi {
-  padding: 80px 0;
+  padding: 60px 0;
   background: white;
 }
 
 .sobre-mi-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
 .sobre-mi-imagen img {
   width: 100%;
-  border-radius: 32px;
-  box-shadow: 0 25px 40px -15px #1e293b;
+  border-radius: 28px;
+  box-shadow: 0 20px 35px -12px #1e293b;
 }
 
 .sobre-mi-texto h2 {
-  font-size: 2.2rem;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
   color: var(--color-oscuro);
-  margin: 0.5rem 0 1.2rem;
+  margin: 0.5rem 0 1rem;
+  word-wrap: break-word;
 }
 
 .sobre-mi-texto p {
-  margin-bottom: 1.2rem;
-  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  word-wrap: break-word;
 }
 
 .sobre-mi-stats {
   display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
 }
 
 .sobre-mi-stats div {
@@ -342,54 +369,57 @@ body {
 
 .sobre-mi-stats span {
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--color-dorado);
   display: block;
 }
 
 /* Contacto */
 .contacto {
-  padding: 80px 0;
+  padding: 60px 0;
   background: var(--color-gris-claro);
 }
 
 .contacto-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 2.5rem;
+  gap: 2rem;
   background: white;
-  border-radius: 32px;
-  padding: 2.5rem;
+  border-radius: 28px;
+  padding: 2rem;
   box-shadow: 0 15px 30px -12px rgba(0,0,0,0.1);
 }
 
 .contacto-datos h3 {
   color: var(--color-oscuro);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
 }
 
 .contacto-datos ul {
   list-style: none;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .contacto-datos li {
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  word-wrap: break-word;
 }
 
 .contacto-datos i {
   color: var(--color-dorado);
   width: 20px;
+  flex-shrink: 0;
 }
 
 .redes {
   display: flex;
-  gap: 1.2rem;
-  font-size: 1.5rem;
-  margin: 1.8rem 0;
+  gap: 1rem;
+  font-size: 1.3rem;
+  margin: 1.5rem 0;
 }
 
 .redes a {
@@ -408,21 +438,22 @@ body {
 }
 
 .form-group {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
   display: block;
   font-weight: 500;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
   color: #1f2937;
+  font-size: 0.95rem;
 }
 
 .form-group input, .form-group select, .form-group textarea {
   width: 100%;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border: 1px solid #d1d5db;
-  border-radius: 14px;
+  border-radius: 12px;
   font-family: inherit;
   font-size: 0.95rem;
 }
@@ -431,6 +462,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .form-group.checkbox input {
@@ -441,11 +473,13 @@ body {
   width: 100%;
   text-align: center;
   margin-top: 0.5rem;
+  padding: 12px 20px !important;
+  white-space: normal;
 }
 
 .form-note {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
   color: #6b7280;
   text-align: center;
 }
@@ -454,41 +488,146 @@ body {
 footer {
   background: var(--color-oscuro);
   color: #9ca3af;
-  padding: 2rem 0;
+  padding: 1.8rem 0;
   text-align: center;
 }
 
 .footer p {
   margin: 0.3rem 0;
+  font-size: 0.9rem;
+  word-wrap: break-word;
 }
 
 /* responsive */
 @media (max-width: 900px) {
-  .hero-grid, .sobre-mi-grid, .contacto-grid {
+  .hero-grid, .sobre-mi-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
+  
   .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
+  
   .menu {
     display: none;
   }
+  
   .menu-toggle {
     display: block;
   }
+  
   .contacto-grid {
-    padding: 1.8rem;
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+  
+  .navbar {
+    height: auto;
+    min-height: 70px;
+  }
+  
+  .logo a {
+    font-size: 1.2rem;
+  }
+  
+  .logo span {
+    display: none;
   }
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .hero {
+    padding: 40px 0;
+  }
+  
+  .hero-text h1 {
+    font-size: 1.9rem;
+  }
+  
+  .hero-badge {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
   .servicios-grid, .proyectos-grid {
     grid-template-columns: 1fr;
   }
+  
+  .servicio-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .sobre-mi-stats {
+    gap: 1rem;
+    justify-content: space-between;
+  }
+  
+  .sobre-mi-stats span {
+    font-size: 1.5rem;
+  }
+  
   .form-row {
     grid-template-columns: 1fr;
   }
-  .logo span {
-    display: none;
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contacto-grid {
+    padding: 1.2rem;
+  }
+  
+  .btn-primary, .btn-secondary {
+    white-space: normal;
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+  }
+  
+  .hero-badge span {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Fix para el texto "Laila Vico 22a" */
+  .sobre-mi-texto p strong {
+    word-break: break-word;
+  }
+  
+  .contacto-datos li {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-text h1 {
+    font-size: 1.7rem;
+  }
+  
+  .logo a {
+    font-size: 1rem;
+  }
+  
+  .sobre-mi-stats {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .sobre-mi-stats div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .sobre-mi-stats span {
+    font-size: 1.3rem;
+    display: inline-block;
+    margin-right: 5px;
   }
 }
